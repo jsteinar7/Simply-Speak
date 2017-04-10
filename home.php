@@ -1,5 +1,4 @@
 <?php
-
  session_start();
  require 'dbconnect.php';
  
@@ -9,17 +8,17 @@
   exit;
  }
  // select loggedin users detail
- $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
- $userRow=mysql_fetch_array($res);
+ $res=mysqli_query($conn,"SELECT * FROM users WHERE userId=".$_SESSION['user']);
+ $userRow=mysqli_fetch_array($res);
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Homepage</title>
 </head>
 <body>
-    <h1>Welcome - <?php echo $userRow['userEmail']; ?></h1>
+    <h1>Welcome - <?php echo $userRow['userName']; ?></h1>
     <a href="logout.php">Logout</a>
       
 </body>

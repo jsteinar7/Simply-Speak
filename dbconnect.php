@@ -6,16 +6,9 @@ error_reporting( ~E_DEPRECATED & ~E_NOTICE );
  define('DBPASS', '');
  define('DBNAME', 'mydb');
  
- $conn = mysql_connect(DBHOST,DBUSER,DBPASS);
- $dbcon = mysql_select_db(DBNAME);
- 
- if (!$conn) 
-{
-    die("Connection failed : " . mysql_error());
-}
+ $conn = mysqli_connect(DBHOST,DBUSER,DBPASS,DBNAME);
 
-if (!$dbcon) 
-{
-    die("Database Connection failed : " . mysql_error());
-}
+ if (!$conn) 
+    {die("Connection failed : " . mysqli_error($conn));}
+
 ?>
