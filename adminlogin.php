@@ -52,10 +52,11 @@
 
 <html>
     <head>
-        <title>Admin Login</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <title>Adosat Admin Login</title>
     </head>
     <body>
-        <h2>Admin Login Page</h2>
+        <h2>Adosat Admin Login</h2>
         <form method="post" action="adminlogin.php">
          <?php
             if (isset($errMSG)) 
