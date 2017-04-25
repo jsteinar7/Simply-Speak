@@ -1,0 +1,309 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400");
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+      -ms-user-select:none;
+          user-select:none;
+}
+html
+{
+    height: 600px;
+
+}
+body {
+  	
+   font-family: 'Righteous', cursive;
+    background: url("images/background1.jpg"); /*Wanderlust background*/
+   // background: url("../images/background1.jpg");  /*Library background*/
+    background-size:auto;
+    overflow-x: hidden;
+    
+
+}
+div > div > a:hover
+{
+    text-decoration: none;
+}
+
+.login {
+  position: relative;
+  top: 50%;
+  left: 50%;
+
+border:2px solid #fff;
+    box-shadow: 0 0 0 4px #242830;
+  margin: -6rem 0 0 -10rem;
+  width: 20rem;
+  height: 20rem;
+  padding: 3em;
+  background: hsla(255,255%,255%,1);
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transition: all 1s ease;
+  transition:all 1s ease;
+}
+.login:hover, .login:focus
+{
+    //border:6px solid #242830;/* Blue border*/
+    //border:6px solid #ee1c25; /*Black border*/
+    
+}
+.login:hover > .header, .login.clicked > .header {
+  width: 2rem;
+    
+}
+.login:hover > .header > .text, .login.clicked > .header > .text {
+  font-size: 1rem;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.login.loading > .header {
+  width: 20rem;
+  -webkit-transition: all 1s ease;
+  transition:all 1s ease;
+}
+.login.loading > .header > .text {
+  display: none;
+}
+.login.loading > .header > .loader {
+  display: block;
+}
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 20rem;
+  height: 20rem;
+  background: #242830;/*Blue background in Login circle */
+    //background: #ee1c25; /*Black background in Login Circle */
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+.header > .text {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 20rem;
+  color: hsla(255,255%,255%,1);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.header > .loader {
+  display: none;
+  position: absolute;
+  left: 5rem;
+  top: 5rem;
+  width: 10rem;
+  height: 10rem;
+  border-left: 10px solid hsla(255, 255%, 255%, 1);
+  border-bottom:10px solid hsla(255,255%,255%,1);
+  border-right:10px solid hsla(255,255%,255%,1);
+  border-top: 8px solid hsla(255,255%,255%,1);
+  border-radius: 50%;
+  box-shadow:inset 2px 2px 2px 2px hsla(0, 5%, 0%, 1);
+  -webkit-animation: loading 2s linear infinite;
+          animation: loading 2s linear infinite;
+}
+.header > .loader:after {
+  content: "";
+  position: absolute;
+  left: 4.15rem;
+  top: -0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: hsla(1, 75%, 55%, 1);
+  border-radius: 50%;
+  border-right: 1px solid hsla(1, 75%, 55%, 1);
+  
+}
+.header > .loader:before {
+  content: "";
+  position: absolute;
+  left: 3.4rem;
+  top: -0.5rem;
+  width: 0;
+  height: 0;
+  border-right: 1rem solid hsla(1, 75%, 55%, 1);
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+}
+
+@-webkit-keyframes loading {
+  50% {
+  border-left: 10px solid hsla(1, 95%, 25%, 1);
+  border-bottom:10px solid hsla(1, 95%, 25%, 1);
+  border-right:10px solid hsla(1, 95%, 25%, 1);
+  border-top:8px solid hsla(1, 95%, 25%, 1);  
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  50% {
+  border-left: 10px solid hsla(1, 95%, 25%, 1);
+  border-bottom:10px solid hsla(1, 95%, 25%, 1);
+  border-right:10px solid hsla(1, 95%, 25%, 1);
+  border-top:8px solid hsla(1, 95%, 25%, 1);  
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.form {
+  margin: 0 0 0 2rem;
+  padding: 0.5rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+  border-color: hsla(0, 5%, 0%, 1);
+  border-width: 0 0 3px 0;
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+  outline:transparent;
+}
+.input + .input {
+  margin: 10px 0 0;
+}
+.input:focus {
+  border-bottom: 3px solid hsla(1, 75%, 55%, 1);
+}
+
+
+
+
+
+.btn1 {
+  position: absolute;
+  right: 7.8rem;
+  bottom: 3rem;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  background: hsla(255, 255%, 255%, 1);
+  font-size: 0;
+  border: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.btn1:after {
+  content: "";
+  position: absolute;
+  left: 1.4rem;
+  top: 1rem;
+  width: 0;
+  height: 0;
+  border-left: 1.6rem solid hsla(1, 75%, 55%, 1);
+  border-top: .8rem solid transparent;
+  border-bottom: .8rem solid transparent;
+  -webkit-transition: border 0.3s ease-in-out 0s;
+  transition: border 0.3s ease-in-out 0s;
+}
+.btn1:hover, .btn1:focus, .btn1:active {
+  outline: none;
+  
+}
+.btn1:hover:after, .btn1:focus:after, .btn1:active:after {
+  border-left-color: hsla(0, 5%, 0%, 1);
+}
+
+
+.signup{
+ position: relative;
+  //left: 50%;
+    margin-left: -18%;
+    margin-top: 40%;
+  padding:.5em;
+    border: none;
+  width:5.5em;
+    background:hsla(0,0%,0%,1);
+  color:hsla(255,255%,255%,1);
+  font-size:1em;
+  border-radius:4px;
+  -webkit-transition: all 1s ease-in-out;
+  transition:all 1s ease-in-out;
+  outline:none;
+  box-shadow:0 0 1px 1px hsla(0,0%,0%,0.2);
+}
+.signup:hover , .signup:focus{
+    background:hsla(255,255%,255%,1);
+  color:hsla(0,0%,0%,1);
+    outline:4px solid hsla(0,0%,0%,1);
+  
+}
+
+h6
+{
+    font-size: .8em;
+    margin-top: 5px;
+}
+h1
+{
+    font-size: 5em;
+    color: white;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 2px;
+    margin-top: 30px;
+}
+p, button
+{
+    color: white;
+    font-family: 'Righteous','cursive';
+}
+
+@media only screen and (max-width:320px)
+{
+    /*.signup{
+  position: absolute;
+  left: 50%;
+  top: 87%;
+margin-left: -50px;}*/
+    .login {
+  position: relative;
+  top: 55%;
+  left: 50%;
+ margin: -6rem 0 0 -10rem;
+  width: 20rem;
+  height: 20rem;
+  padding: 3em;
+  background: hsla(255,255%,255%,1);
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transition: all 1s ease;
+  transition:all 1s ease;
+}
+    html
+{
+    height: 100%;
+}
+    h1
+{
+    font-size: 4.5em;
+    margin-top: 10px;
+    
+}
+    p
+{
+    font-size: .8em;
+    
+    
+}
+}
+
