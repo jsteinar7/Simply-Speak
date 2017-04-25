@@ -25,7 +25,7 @@ if(isset($_POST['Submit'])){
 
     //echo "You have total ".$totalSheet." sheets".
 
-    $html="<table border='1'>";
+    $html="<h1>Upload</h1><table border='1'>";
     $html.="<tr>"
             . "<th>Questions</th>"
             . "<th>Option 1</th>"
@@ -61,14 +61,14 @@ if(isset($_POST['Submit'])){
                 . "values('".$ques."','".$op1."','".$op2."','".$op3."','".$op4."','".$rightans."')";
 
         //$mysqli->query($query);
-        $result = mysqli_query($conn,$query);
+        mysqli_query($conn,$query);
        }
 
     }
 
     $html.="</table>";
     echo $html;
-    echo "<br />Data Inserted in dababase";
+    echo "<br />Data successfully inserted into dababase";
 
   }else { 
     die("<br/>Sorry, File type is not allowed. Only Excel file. your file is of type ".$_FILES["file"]["type"]); 
@@ -77,3 +77,10 @@ if(isset($_POST['Submit'])){
 }
 
 ?>
+<html>
+    <head>
+        <title>Upload</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        
+    </head>
+</html>
