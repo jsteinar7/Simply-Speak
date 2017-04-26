@@ -15,11 +15,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Homepage</title>
+<title>Adosat Home</title>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<style>
+    .btn-space {
+    margin-right: 45px;
+}
+</style>
 </head>
-<body>
-    <h1>Welcome - <?php echo $userRow['userName']; ?></h1>
-    <a href="logout.php">Logout</a>
-      
+<body class="container">
+    <br>
+    <a href="logout.php"><button class="btn pull-right btn-danger">Logout</button></a><br>
+    <h1>Welcome <?php echo $userRow['userName']; ?></h1><br>
+    <p class="text-center">
+        <a href="taketest.php"><button class="btn btn-success btn-lg btn-space">Take test now</button></a>
+        <a href="viewmyscores.php"><button class="btn btn-primary btn-lg">View My scores</button></a>
+    </p>
 </body>
 </html>
