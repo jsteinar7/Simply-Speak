@@ -1,6 +1,6 @@
 <?php
- session_start();
- //Setting the required sessions if not set already
+ 
+session_start(); //Setting the required sessions if not set already
  require 'dbconnect.php';
  require 'setsessionfortest.php';
  $NUMBER_OF_QUESTIONS_TO_BE_ASKED=5;
@@ -38,7 +38,7 @@
  if( isset($_SESSION['count']) ) 
    {
      if($_SESSION['count'] < $NUMBER_OF_QUESTIONS_TO_BE_ASKED && isset($_POST['submit']))
-     {echo $_SESSION['score'].'-'.$_POST['selectedOpt'].'-'.$_SESSION['questionObject']->rightChoice;
+     {//echo $_SESSION['score'].'-'.$_POST['selectedOpt'].'-'.$_SESSION['questionObject']->rightChoice;
          if($_POST['selectedOpt']==$_SESSION['questionObject']->rightChoice)
          {
              $_SESSION['score']++;//right answer
@@ -79,7 +79,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <title>Adosat</title>
     </head>
     <body class="container">
@@ -97,7 +97,5 @@
                 <input type="submit" name="submit" value="Next">
             </form>
         </h4>
-        
-        <a href="unset.php" class="btn"><button>Unset Session</button></a>
     </body>
 </html>

@@ -52,8 +52,9 @@ if(isset($_POST['email']) & !empty($_POST['email']))
 <html>
     <head>
        <title>Forgot Password</title>
+       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     </head>
-    <body>
+    <body class="container">
         <form method="POST" action="forgotpassword.php">
             <h2>Forgot Password</h2>
             <input type="email" name="email" placeholder="Enter Email ID" required>

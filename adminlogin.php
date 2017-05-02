@@ -52,29 +52,42 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <title>Adosat Admin Login</title>
     </head>
     <body>
         <h2>Adosat Admin Login</h2>
-        <form method="post" action="adminlogin.php">
+        <form method="post" action="adminlogin.php" class=" form form-control form-control-lg">
+         
+         <div class="text-danger">
          <?php
-            if (isset($errMSG)) 
-            { echo $errMSG; }
-         ?>         
-        
-         <input type="text" name="adminName" placeholder="Admin Name" maxlength="40" value="<?php echo $enteredName;?>"/>
+         if (isset($errMSG)) 
+         { echo $errMSG; }
+         ?></div>
+            
+         <div class="input-group">
+         <span class="input-group-addon">Admin ID</span>
+         <input type="text" name="adminName" placeholder="Admin ID" maxlength="40" value="<?php echo $enteredName;?>"/>
+         </div>
+         
+         <div class="text-danger">
          <?php
          if (isset($adminNameError)) 
          { echo $adminNameError; }
-         ?><br><br>
+         ?><br><br></div>
             
-         <input type="password" name="pass" placeholder="Your Password" maxlength="15" />
+         <div class="input-group">
+         <span class="input-group-addon">Password</span>
+         <input type="password" name="pass" placeholder="Admin Password" maxlength="15" />
+         </div>
+            
+         <div class="text-danger">
          <?php
          if (isset($passError)) 
          { echo $passError; }
-         ?><br><br>    
-         <button type="submit" name="loginButton">Sign In</button><br><br>
+         ?><br><br></div>
+            
+         <button type="submit" name="loginButton" class="btn btn-outline-success">Sign In</button><br><br>
          </form>
     </body>
 </html>

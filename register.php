@@ -6,7 +6,6 @@
  include 'dbconnect.php';
 //db connection
  $error = false;
-
  if ( isset($_POST['registerButton']) ) {
   // clean user inputs to prevent sql injections
   $name = trim($_POST['name']);
@@ -62,7 +61,7 @@
    $res = mysqli_query($conn,$query);
     
    if ($res) {
-    $errMSG = "Successfully registered, you may <a href='login.php'>login now</a><br>";
+    $errMSG = "Successfully registered, you may <a href='login.php'>login now</a>...<br>";
     unset($name);
     unset($email);
     unset($pass);
@@ -73,30 +72,99 @@
   }
  }
 ?>
+
 <!DOCTYPE html>
-<html>
-<head>
-<title>Register Page</title>
-</head>
-<body>
-    <form method="POST" action="register.php">
-      <h2>Sign Up here.</h2>
-              <?php 
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<!-- Website CSS style -->
+		<!-- Latest compiled and minified CSS --> 
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+                <style>
+                    body{
+                         background:#4286f4; /*Wanderlust background*/
+                        // background: url("../images/background1.jpg");  /*Library background*/
+                         background-size:auto;
+                         overflow-x: hidden;
+                    }
+                    .green{
+                        color: green;
+                    }
+                </style>
+		<title>Admin</title>
+	</head>
+
+
+	<body>
+	
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <h1>Registeration takes only few minutes...</h1><br>
+            <h4><?php 
                  if (isset($errMSG)) 
                 {  echo $errMSG; }
-              ?>
-             <input type="text" name="name" placeholder="Enter Your Name" maxlength="50" value="<?php echo $name ?>" />
-             <?php echo $nameError; ?>
-             <br><br>
-             <input type="email" name="email" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
-             <?php echo $emailError; ?>
-             <br><br>
-             <input type="password" name="pass" placeholder="Enter Password" maxlength="15" />
-             <?php echo $passError; ?>
-             <br><br>
-             <button type="submit" name="registerButton">Sign Up</button>
-             <br><br>
-             Already Registered??? <a href="login.php">Sign in Here...</a>
-    </form>
- </body>
+                ?></h4>
+            <form method="POST" action="register.php">
+
+                <div class="form-group">
+    <label for="name" class="cols-sm-2 control-label">Your Name</label><div class="cols-sm-10"><div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+    <input type="text" class="form-control" name="name" id="name" value="<?php echo $name ?>" placeholder="Enter your Name"/>
+    </div><?php echo $nameError; ?>               </div>
+                </div>
+        
+
+    <div class="form-group">
+            <label for="email" class="cols-sm-2 control-label">Your Email</label>
+            <div class="cols-sm-10">
+                    <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="email" id="email"  value="<?php echo $email ?>" placeholder="Enter your Email"/>
+                    
+                    </div><div><?php echo $emailError; ?></div>
+            </div>
+    </div>
+
+						
+
+    <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label">Password</label>
+            <div class="cols-sm-10">
+                    <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="password" class="form-control" name="pass" id="password"  placeholder="Enter your Password"/>
+                       </div>
+                <div><?php echo $passError; ?> </div>            </div>
+        </div>
+
+
+        <div class="form-group ">
+            <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" name="registerButton">
+                Sign Up</button>
+        </div>
+						
+		<div class="form-group ">
+                    
+    <div class="align-center"><button class="btn"><a href="login.php" >Already Registered??? <br>Sign in Here...</a></button> 
+    </div>
+                </div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+            
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
 </html>

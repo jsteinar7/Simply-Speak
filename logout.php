@@ -7,7 +7,7 @@
   unset($_SESSION['user']); //if its already set, unset and destroy the session and then redirect to the login page
   session_unset();
   session_destroy();
-  header("Location: login.php");
+  header("Location: index.php");
   exit;
   
  ?>

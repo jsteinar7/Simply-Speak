@@ -80,7 +80,7 @@ if(isset($_POST['Submit'])){
 <html>
     <head>
         <title>Upload</title>
-        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         
     </head>
 </html>
