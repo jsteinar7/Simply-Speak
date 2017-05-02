@@ -1,2 +1,2 @@
-# Simply-Speak
-An online English Assessment website built on PHP
+# Simply-Speak for ADOSAT
+Simply speak is an online English assessment website built on PHP and MySQL using excel-reader library. Simply-Speak has two way usage for both admin and the users. The admin could upload the questions in bulk into the database from any formatted excel file with just a single click from admin panel. Random questions are picked for the users from the database upon the test session. Scores are generated based on the user's performance. Admin could view the performance of each and every user from the admin panel.
