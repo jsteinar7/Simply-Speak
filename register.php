@@ -89,8 +89,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
                 <style>
                     body{
-                         background:#4286f4; /*Wanderlust background*/
-                        // background: url("../images/background1.jpg");  /*Library background*/
+                         //background:#4286f4; /*Wanderlust background*/
+                         background: url("images/newbg.jpg");  /*Library background*/
                          background-size:auto;
                          overflow-x: hidden;
                     }
@@ -107,14 +107,21 @@
 <div class="container">
     <div class="row main">
         <div class="main-login main-center">
+            <div class="form-group ">
+        <div class="align-center">
+            <button class=" btn-outline-primary pull-right"><a href="login.php" >
+                    Already Registered??? <br>Sign in Here...</a></button> 
+        </div>
+        </div>
             <h1>Registeration takes only few minutes...</h1><br>
             <h4><?php 
                  if (isset($errMSG)) 
                 {  echo $errMSG; }
                 ?></h4>
-            <form method="POST" action="register.php">
-
-                <div class="form-group">
+            
+    <form method="POST" action="register.php">
+        
+        <div class="form-group">
     <label for="name" class="cols-sm-2 control-label">Your Name</label><div class="cols-sm-10"><div class="input-group">
     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
     <input type="text" class="form-control" name="name" id="name" value="<?php echo $name ?>" placeholder="Enter your Name"/>
@@ -145,17 +152,13 @@
                 <div><?php echo $passError; ?> </div>            </div>
         </div>
 
-
+        <br>
         <div class="form-group ">
-            <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" name="registerButton">
+            <button type="submit" id="button" class="btn btn-outline-primary btn-lg btn-block login-button" name="registerButton">
                 Sign Up</button>
         </div>
 						
-		<div class="form-group ">
-                    
-    <div class="align-center"><button class="btn"><a href="login.php" >Already Registered??? <br>Sign in Here...</a></button> 
-    </div>
-                </div>
+	
 						
 					</form>
 				</div>
