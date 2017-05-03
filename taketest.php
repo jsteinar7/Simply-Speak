@@ -81,8 +81,19 @@ session_start(); //Setting the required sessions if not set already
     <head>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <title>Adosat</title>
+        <style>
+        body{
+            background: url("images/newbg.jpg");  /*Library background*/
+            background-size:auto;
+            overflow-x: hidden;
+        }
+        .jumbotron{
+            background: rgb(0, 0, 0); /* This is for ie8 and below */
+            background: rgba(0, 0, 0, 0.5); 
+        }
+       </style>
     </head>
-    <body class="container">
+    <body style="color: white" class="container">
         <h1>Choose the best option </h1>
         <h3 class="jumbotron">
             <?php echo $_SESSION['count'].'.  ';?> 
