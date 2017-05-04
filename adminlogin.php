@@ -53,21 +53,34 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
         <title>Adosat Admin Login</title>
+        <style>
+             body{
+                //background: url("images/background4.jpg");  /*Library background*/
+                //background-size:auto;
+                //overflow-x: hidden;
+                font-family: 'Cormorant SC';
+           }
+           .form{
+               //background: rgba(0,0,0,0.025);
+           }
+        </style>
     </head>
-    <body>
-        <h2>Adosat Admin Login</h2>
-        <form method="post" action="adminlogin.php" class=" form form-control form-control-lg">
-         
+    <body class="container">
+    <center>
+        <p style="font-size:70px;">Adosat Admin Login</p>
+        <form method="post" action="adminlogin.php" class="form form-control form-control-lg">
+        
          <div class="text-danger">
          <?php
          if (isset($errMSG)) 
          { echo $errMSG; }
          ?></div>
             
-         <div class="input-group">
+         <div class="input-group"><div class="col-sm-4"></div>
          <span class="input-group-addon">Admin ID</span>
-         <input type="text" name="adminName" placeholder="Admin ID" maxlength="40" value="<?php echo $enteredName;?>"/>
+         <input type="text" name="adminName" maxlength="40" value="<?php echo $enteredName;?>"/>
          </div>
          
          <div class="text-danger">
@@ -76,9 +89,9 @@
          { echo $adminNameError; }
          ?><br><br></div>
             
-         <div class="input-group">
+         <div class="input-group"><div class="col-sm-4"></div>
          <span class="input-group-addon">Password</span>
-         <input type="password" name="pass" placeholder="Admin Password" maxlength="15" />
+         <input type="password" name="pass" maxlength="15" />
          </div>
             
          <div class="text-danger">
@@ -87,7 +100,8 @@
          { echo $passError; }
          ?><br><br></div>
             
-         <button type="submit" name="loginButton" class="btn btn-outline-success">Sign In</button><br><br>
+            <button style="font-family: 'Cormorant SC';font-size:30px;" type="submit" name="loginButton" class="btn btn-outline-success">Log In</button><br><br>
          </form>
+    </center>
     </body>
 </html>

@@ -89,20 +89,27 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
                 <style>
                     body{
-                         //background:#4286f4; /*Wanderlust background*/
-                         background: url("images/newbg.jpg");  /*Library background*/
+                         background: url("images/background.jpg");  /*Library background*/
                          background-size:auto;
                          overflow-x: hidden;
                     }
                     .green{
                         color: green;
                     }
+                    .transparent{
+                        background: rgb(0, 0, 0); /* This is for ie8 and below */
+                        background:rgba(0,0,0,0);
+                        color:white;
+                    }
+                    .form-group{
+                        size: 20;
+                    }
                 </style>
 		<title>Admin</title>
 	</head>
 
 
-	<body>
+        <body style="color: white">
 	
 <div class="container">
     <div class="row main">
@@ -124,7 +131,7 @@
         <div class="form-group">
     <label for="name" class="cols-sm-2 control-label">Your Name</label><div class="cols-sm-10"><div class="input-group">
     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-    <input type="text" class="form-control" name="name" id="name" value="<?php echo $name ?>" placeholder="Enter your Name"/>
+    <input size="5" type="text" class="transparent form-control" name="name" id="name" value="<?php echo $name ?>" placeholder="Enter your Name"/>
     </div><?php echo $nameError; ?>               </div>
                 </div>
         
@@ -133,10 +140,10 @@
             <label for="email" class="cols-sm-2 control-label">Your Email</label>
             <div class="cols-sm-10">
                     <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="email" id="email"  value="<?php echo $email ?>" placeholder="Enter your Email"/>
-                    
-                    </div><div><?php echo $emailError; ?></div>
+                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control transparent" name="email" id="email"  value="<?php echo $email ?>" placeholder="Enter your Email"/>
+                    </div>
+                <div><?php echo $emailError; ?></div>
             </div>
     </div>
 
@@ -147,14 +154,14 @@
             <div class="cols-sm-10">
                     <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" name="pass" id="password"  placeholder="Enter your Password"/>
+                            <input type="password" class="transparent form-control" name="pass" id="password"  placeholder="Enter your Password"/>
                        </div>
                 <div><?php echo $passError; ?> </div>            </div>
         </div>
 
         <br>
         <div class="form-group ">
-            <button type="submit" id="button" class="btn btn-outline-primary btn-lg btn-block login-button" name="registerButton">
+            <button type="submit" style="background: rgba(0, 0, 0, 0.2); " id="button" class="btn btn-outline-primary btn-lg btn-block login-button" name="registerButton">
                 Sign Up</button>
         </div>
 						

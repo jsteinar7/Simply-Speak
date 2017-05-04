@@ -36,16 +36,16 @@ if(isset($_POST['email']) & !empty($_POST['email']))
                         $hashedNewPassword = hash('sha256', $newPass);
                         $sql="UPDATE users SET userPass ='".$hashedNewPassword."' WHERE userEmail ='".$to."';"; //echo $sql;
                         mysqli_query($conn,$sql);
-                        echo "Your new password has been sent to your email id. Please check your mail.";
+                        $msg="Your new password has been sent to your email id. Please check your mail.";
                 }
                 else
                 {
-                        echo "Failed to Recover your password, try again";
+                       $msg="Failed to recover your password, try again";
                 }
             //echo ($_POST['email']);
             }
         else
-            {echo "User name does not exist in database";}
+            {$msg= "Email ID does not exists in database";}
     }
 
 ?>
@@ -53,13 +53,38 @@ if(isset($_POST['email']) & !empty($_POST['email']))
     <head>
        <title>Forgot Password</title>
        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+       <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Wendy+One" rel="stylesheet">
+       <style>
+           body{
+                background: url("images/background1.jpg");  /*Library background*/
+                background-size:auto;
+                overflow-x: hidden;
+                color:wheat;
+                font-family: 'Love Ya Like A Sister';
+            }
+            .big{
+                height: 55px;
+                width: 600px;
+            }
+       </style>
     </head>
-    <body class="container">
-        <form method="POST" action="forgotpassword.php">
-            <h2>Forgot Password</h2>
-            <input type="email" name="email" placeholder="Enter Email ID" required>
+    <body class="container"><center>
+        <div class="text-right"><br>
+            <a href="login.php">
+                <button style="height:60px; width:150px;font-size:35px;font-family: 'Love Ya Like A Sister';" class="btn btn-outline-secondary">Login</button>
+            </a>
+        </div>
+        <form method="POST" action="forgotpassword.php"><br>
+            
+            <p style="font-size: 70px;">Forgot your password?</p>
+            <p style="font-size: 30px;">No worries. It takes less than a minute only to recover it.</p>
+            <br><div style="font-family:'Wendy One';font-size: 40px;color: white">
+                <?php echo $msg; ?></div><br><br>
+            <span style="font-size:40px;"><strong>Email ID </strong>
+            <input class="big" type="email" name="email" size="25" required></span>
             <br><br>
-            <button type="submit" name="sub">Forgot Password</button>
-        </form><br><a href="login.php">Login</a>
+            <button style="font-family:'Love Ya Like A Sister'; height:60px; width:400px; font-size:35px;" class="btn btn-outline-warning" type="submit" name="sub">Recover My Password</button>
+        </form><br>
+    </center>
     </body>
 </html>

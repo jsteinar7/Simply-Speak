@@ -13,10 +13,21 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <title>Adosat View All Scores</title>
+        <style>
+            body{
+                background: url("images/newbg4.jpg");  /*Library background*/
+                background-size:auto;
+                overflow-x: hidden;
+            }
+            .btn-space {
+               margin-left: 75%;
+            }
+        </style>
     </head>
     <body class="container"><br>
-        <div class="text-right">
-            <a href="adminlogout.php"><button class="btn pull-right btn-danger">Logout</button></a>  
+        <div class="text-left">
+            <a href="adminpanel.php"><button class="btn btn-primary">Back to Admin Panel</button></a>
+            <a href="adminlogout.php"><button class="btn btn-space btn-danger">Logout</button></a>  
         </div>
     <?php
         $query = "SELECT scores.userId, scores.date, scores.score ,users.userName"
@@ -30,8 +41,8 @@
         }
         else
         {
-            $html ="<h1>Scores obtained so far</h1>";
-            $html.="<table border='1' class='table table-bordered'>";
+            $html ="<h1><center>Scores obtained so far</center></h1>";
+            $html.="<table border='1' class='table table-bordered table-active'>";
             $html.="<tr>"
                 . "<th>User</th>"
                 . "<th>Date</th>"
@@ -50,6 +61,5 @@
          echo $html;
         }    
     ?>
-        <a href="adminpanel.php"><button class="btn btn-primary">Back to Admin Panel</button></a><br>
     </body>
 </html>

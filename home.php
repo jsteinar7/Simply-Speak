@@ -19,26 +19,34 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <style>
     body{
-        background: url("images/newbg2.jpg");  /*Library background*/
+        background: url("images/background1.jpg");  /*Library background*/
         background-size:auto;
         overflow-x: hidden;
    }
     .btn-space {
-        margin-right: 45px;
+        margin-right: 200px;
+    }
+    .big{
+        height: 300px;
+        width: 300px;
+        font-size: 50px;
+        background: rgba(0, 0, 0, 0); 
+        color: lightgoldenrodyellow;
     }
 </style>
 </head>
 <body class="container">
     <br>
-    <div class="text-right">
+    <div class="text-left">
         <a href="changepassword.php">
-            <button class="btn btn-link btn-space" style="color: white"><b>Change my password</b></button></a>
-        <a href="logout.php"><button class="btn pull-right btn-danger">Logout</button></a>  
-    </div>
-    <h1 style="color: white">Welcome <?php echo $userRow['userName']; ?></h1><br>
-    <p class="text-center"><br><br><br><br>
-        <a href="taketest.php"><button class=" btn-space btn btn-success btn-lg">Take test now</button></a>
-        <a href="viewmyscores.php"><button class="btn btn-primary btn-lg">View My scores</button></a>
+            <button style="background:rgba(0, 0, 0, 0);color: white;" class="btn btn-outline-warning"><b>Change my password</b></button></a>
+            <a href="logout.php">
+                <button style=" margin-left: 70%;" class="btn pull-right btn-danger">Logout</button></a>  
+    </div><br>
+    <p style="color: white; font-size: 70px;" class="text-center">Welcome <?php echo $userRow['userName']; ?></p>
+    <p class="text-center"><br><br>
+        <a href="taketest.php"><button class="big btn-space btn btn-success btn-lg">Take<br>Test<br>now</button></a>
+        <a href="viewmyscores.php"><button class="big btn btn-info btn-lg">View<br>My<br>scores</button></a>
     </p>
 </body>
 </html>

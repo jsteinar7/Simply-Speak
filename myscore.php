@@ -27,18 +27,30 @@
         <title>Adosat Score</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <style>
+            body{
+                background: url("images/newbg3.jpg");  /*Library background*/
+                background-size:auto;
+                overflow-x: hidden;
+            }
             .btn-space {
-            margin-right: 45px;
+               margin-right: 150px;
+            }
+            .big{
+                height: 100px;
+                width: 300px;
+                font-size: 50px;
+                background: rgba(0, 0, 0, 0); 
+                color: lightgoldenrodyellow;
             }
         </style>
     </head>
-    <body class="container">
-        <h3>You have completed the test successfully</h3>
-        <h3>You've scored <?php echo $_SESSION['score'] ?> out of <?php echo $_SESSION['count']?></h3>
-        <h1> <?php echo $percent; ?>%</h1>
+    <body style="color: white" class="container">
+        <h1 class="text-center">You have completed the test successfully</h3>
+        <h1 class="text-center">You've scored <?php echo $_SESSION['score'] ?> out of <?php echo $_SESSION['count']?></h3>
+        <p style="font-size: 250px" class="text-center"> <?php echo $percent; ?>%</p>
         <div class="text-center">
-        <a href="home.php"><button class="btn btn-space btn-primary ">Go to Home</button></a>
-        <a href="logout.php"><button class="btn btn-space btn-danger">Logout</button></a><br>
+        <a href="home.php"><button class="btn btn-space btn-primary big">Go to Home</button></a>
+        <a href="logout.php"><button class="btn btn-danger big">Logout</button></a><br><br><br>
         </div>
     </body>
    </html>
