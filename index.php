@@ -45,9 +45,9 @@
                     <p>Center for Excellence </p>
                     <ul class="actions">
                             <li>
-                                    <a href="login.php" class="btn-space button big">LOGIN</a>
-                                    <a href="register.php" class="btn-space button big">REGISTER</a>
-                                    <a href="adminlogin.php" class="btn-space button big">ADMIN</a>
+                                    <a href="login.php" target="_blank" class="btn-space button big">LOGIN</a>
+                                    <a href="register.php" target="_blank" class="btn-space button big">REGISTER</a>
+                                    <a href="adminlogin.php" target="_blank" class="btn-space button big">ADMIN</a>
                             </li>
                     </ul>
     </div>
