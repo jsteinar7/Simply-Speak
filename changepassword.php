@@ -13,17 +13,9 @@
  if( isset($_POST['sub']) ) { 
   
   // prevent sql injections/ clear user invalid inputs
-  $currentPass = trim($_POST['currentPass']);
-  $currentPass = strip_tags($currentPass);
-  $currentPass = htmlspecialchars($currentPass);
-  // prevent sql injections/ clear user invalid inputs
-  $newPass = trim($_POST['newPass']);
-  $newPass = strip_tags($newPass);
-  $newPass = htmlspecialchars($newPass);
-  // prevent sql injections/ clear user invalid inputs
-  $retypedPass = trim($_POST['retypedPass']);
-  $retypedPass = strip_tags($retypedPass);
-  $retypedPass = htmlspecialchars($retypedPass);
+  $currentPass = htmlspecialchars(strip_tags(trim($_POST['currentPass'])));
+  $newPass = htmlspecialchars(strip_tags(trim($_POST['newPass'])));
+  $retypedPass = htmlspecialchars(strip_tags(trim($_POST['retypedPass'])));
   
   if(empty($currentPass)){
    $error = true;
