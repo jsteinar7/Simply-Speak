@@ -14,10 +14,8 @@ function generateRandomPassword($length = 10) {
 if(isset($_POST['email']) & !empty($_POST['email']))
     {
         // prevent sql injections/ clear user invalid inputs
-        $email = mysqli_real_escape_string($conn,$email);
-        $email = $_POST['email'];
-        //echo $email;
-	$sql = "SELECT * FROM `users` WHERE userEmail = '$email'";
+        $email = htmlspecialchars(strip_tags(trim($_POST['email'])));
+        $sql = "SELECT * FROM `users` WHERE userEmail = '$email'";
         $res = mysqli_query($conn,$sql);
 	$count = mysqli_num_rows($res);
 	if($count==1)
