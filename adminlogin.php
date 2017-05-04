@@ -14,13 +14,8 @@
     if( isset($_POST['loginButton']) ) { 
   
   // prevent sql injections/ clear user invalid inputs
-  $enteredName = trim($_POST['adminName']);
-  $enteredName = strip_tags($enteredName);
-  $enteredName = htmlspecialchars($enteredName);
-  
-  $pass = trim($_POST['pass']);
-  $pass = strip_tags($pass);
-  $pass = htmlspecialchars($pass);
+  $enteredName = htmlspecialchars(strip_tags(trim($_POST['adminName'])));
+  $pass = htmlspecialchars(strip_tags(trim($_POST['pass'])));
   
   if(empty($enteredName))
   {
@@ -57,13 +52,7 @@
         <title>Adosat Admin Login</title>
         <style>
              body{
-                //background: url("images/background4.jpg");  /*Library background*/
-                //background-size:auto;
-                //overflow-x: hidden;
                 font-family: 'Cormorant SC';
-           }
-           .form{
-               //background: rgba(0,0,0,0.025);
            }
         </style>
     </head>
@@ -100,7 +89,8 @@
          { echo $passError; }
          ?><br><br></div>
             
-            <button style="font-family: 'Cormorant SC';font-size:30px;" type="submit" name="loginButton" class="btn btn-outline-success">Log In</button><br><br>
+            <button style="font-family: 'Cormorant SC';font-size:30px;" type="submit" name="loginButton" class="btn btn-outline-success">
+                Log In</button><br><br>
          </form>
     </center>
     </body>
